@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebrand and Rise - Building Your Brand with AI | Scope Consultants</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+        
+        .header .meta {
+            opacity: 0.9;
+            font-size: 0.95em;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .mission-box {
+            background: #f0f4ff;
+            border-left: 5px solid #667eea;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .mission-box h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .checklist {
+            list-style: none;
+        }
+        
+        .checklist li {
+            padding: 8px 0;
+            font-size: 1.1em;
+        }
+        
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #fafafa;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .section-header {
+            background: #667eea;
+            color: white;
+            padding: 15px 20px;
+            margin: -30px -30px 25px -30px;
+            border-radius: 10px 10px 0 0;
+            font-size: 1.5em;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .section-header:hover {
+            background: #5568d3;
+        }
+        
+        .toggle-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s;
+        }
+        
+        .section.collapsed .section-content {
+            display: none;
+        }
+        
+        .section.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+        
+        .terms-box {
+            background: #fff9e6;
+            border: 2px dashed #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .terms-box h3 {
+            color: #f57c00;
+            margin-bottom: 10px;
+        }
+        
+        .term {
+            margin: 10px 0;
+        }
+        
+        .term strong {
+            color: #f57c00;
+        }
+        
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .input-group {
+            margin: 20px 0;
+        }
+        
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        
+        .numbered-inputs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .code-box {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        
+        .code-box .placeholder {
+            color: #66d9ef;
+            font-style: italic;
+        }
+        
+        .copy-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        
+        .copy-btn:hover {
+            background: #5568d3;
+        }
+        
+        .copy-btn:active {
+            background: #4451b8;
+        }
+        
+        .checkbox-group {
+            margin: 15px 0;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .checkbox-item:hover {
+            background: #f0f4ff;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        
+        .checkbox-item label {
+            cursor: pointer;
+            flex: 1;
+        }
+        
+        .tool-card {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .tool-card strong {
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        
+        .tool-card a {
+            color: #764ba2;
+            text-decoration: none;
+            border-bottom: 1px dotted #764ba2;
+        }
+        
+        .tool-card a:hover {
+            border-bottom-style: solid;
+        }
+        
+        .step-by-step {
+            counter-reset: step-counter;
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .step-by-step li {
+            counter-increment: step-counter;
+            padding: 15px;
+            margin: 10px 0;
+            background: white;
+            border-left: 4px solid #667eea;
+            border-radius: 6px;
+            position: relative;
+            padding-left: 60px;
+        }
+        
+        .step-by-step li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .example-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            font-style: italic;
+        }
+        
+        .example-box::before {
+            content: "Example: ";
+            font-weight: bold;
+            color: #4caf50;
+            font-style: normal;
+        }
+        
+        .timer {
+            background: #ff9800;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        
+        .pro-tip {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .pro-tip::before {
+            content: "💡 PRO TIP: ";
+            font-weight: bold;
+            color: #f57c00;
+        }
+        
+        .final-snapshot {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        
+        .final-snapshot input[type="text"] {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .final-snapshot label {
+            color: white;
+            font-weight: bold;
+        }
+        
+        .congrats {
+            background: #4caf50;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        
+        .congrats h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .button-primary {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .button-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .button-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .button-secondary:hover {
+            background: #f0f4ff;
+        }
+        
+        .progress-bar {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 6px;
+            background: #e0e0e0;
+            z-index: 1000;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s;
+        }
+        
+        .footer {
+            background: #2d2d2d;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .radio-group {
+            margin: 15px 0;
+        }
+        
+        .radio-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 15px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .radio-item:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+        
+        .radio-item input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        
+        .radio-item input[type="radio"]:checked + label {
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .section-header {
+                margin: -20px -20px 20px -20px;
+                font-size: 1.2em;
+            }
+            
+            .numbered-inputs {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .checkpoint {
+            background: #e3f2fd;
+            border: 3px solid #2196f3;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #1976d2;
+        }
+        
+        .save-btn-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+        
+        @media print {
+            .save-btn-container, .copy-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>🚀 REBRAND AND RISE</h1>
+            <div class="subtitle">Building Your Brand with AI</div>
+            <div class="meta">Presented by Scope Consultants | Duration: 60 Minutes</div>
+        </div>
+        
+        <div class="content">
+            <!-- MISSION -->
+            <div class="mission-box">
+                <h2>🎯 YOUR MISSION TODAY</h2>
+                <p style="margin-bottom: 15px;">By the end of this hour, you'll walk away with:</p>
+                <ul class="checklist">
+                    <li>✅ A clear brand identity foundation</li>
+                    <li>✅ AI-generated logo concepts</li>
+                    <li>✅ 3-5 catchphrase options</li>
+                    <li>✅ Skills to continue refining on your own</li>
+                </ul>
+            </div>
+            
+            <!-- TOOLS SETUP -->
+            <div class="section" id="section0">
+                <div class="section-header" onclick="toggleSection(0)">
+                    <span>📱 TOOLS YOU'LL NEED (All Free!)</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="section-content">
+                    <h3 style="margin-bottom: 15px;">Quick Setup (5 minutes):</h3>
+                    
+                    <div class="tool-card">
+                        <strong>1. ChatGPT</strong><br>
+                        <a href="https://chat.openai.com" target="_blank">chat.openai.com</a> (free account)
+                    </div>
+                    
+                    <div class="tool-card">
+                        <strong>2. Canva</strong><br>
+                        <a href="https://canva.com" target="_blank">canva.com</a> (free account)
+                    </div>
+                    
+                    <div class="tool-card">
+                        <strong>3. Microsoft Designer</strong><br>
+                        <a href="https://designer.microsoft.com" target="_blank">designer.microsoft.com</a> (free)
+                    </div>
+                    
+                    <div class="checkpoint">
+                        ✏️ CHECKPOINT: Everyone logged in? Give a thumbs up!
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECTION 1: BRAND FOUNDATION -->
+            <div class="section" id="section1">
+                <div class="section-header" onclick="toggleSection(1)">
+                    <span>SECTION 1: BRAND FOUNDATION (10 min)</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="terms-box">
+                        <h3>🧠 New Terms to Know:</h3>
+                        <div class="term">
+                            <strong>Brand Identity:</strong> How your business looks, sounds, and feels
+                        </div>
+                        <div class="term">
+                            <strong>Prompt:</strong> Instructions you give to AI (like a recipe)
+                        </div>
+                        <div class="term">
+                            <strong>Iteration:</strong> Creating multiple versions to find the best one
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px;">✍️ EXERCISE 1.1: Your Brand DNA</h3>
+                    <p style="margin-bottom: 20px; font-style: italic;">Answer these in 3-5 words each:</p>
+                    
+                    <div class="input-group">
+                        <label>My business is/will be:</label>
+                        <input type="text" id="business-type" placeholder="e.g., Sustainable fashion boutique">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>We help people:</label>
+                        <input type="text" id="help-people" placeholder="e.g., Look stylish while saving the planet">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Three words that describe my vibe:</label>
+                        <div class="numbered-inputs">
+                            <input type="text" id="vibe-1" placeholder="1. e.g., Modern">
+                            <input type="text" id="vibe-2" placeholder="2. e.g., Authentic">
+                            <input type="text" id="vibe-3" placeholder="3. e.g., Bold">
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>My customers should feel:</label>
+                        <input type="text" id="customer-feeling" placeholder="e.g., Confident and empowered">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Colors I'm drawn to:</label>
+                        <input type="text" id="colors" placeholder="e.g., Deep blue and gold">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECTION 2: CATCHPHRASE -->
+            <div class="section" id="section2">
+                <div class="section-header" onclick="toggleSection(2)">
+                    <span>SECTION 2: AI CATCHPHRASE CREATION (15 min)</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="section-content">
+                    <h3>📝 Copy This Prompt Template into ChatGPT:</h3>
+                    
+                    <div class="code-box" id="promptTemplate">
+I'm creating a brand for <span class="placeholder">[YOUR BUSINESS TYPE]</span>. 
+
+My brand DNA:
+- We help: <span class="placeholder">[FROM EXERCISE 1.1]</span>
+- Brand vibe: <span class="placeholder">[YOUR 3 WORDS]</span>
+- Customer feeling: <span class="placeholder">[FROM ABOVE]</span>
+
+Generate 10 catchphrase options that are:
+- Under 7 words
+- Memorable and clear
+- Professional but approachable
+                    </div>
+                    <button class="copy-btn" onclick="copyPrompt()">📋 Copy Prompt to Clipboard</button>
+                    
+                    <div class="pro-tip" style="margin-top: 20px;">
+                        Replace the <span style="color: #66d9ef;">[BRACKETED SECTIONS]</span> with your answers from Exercise 1.1 before using!
+                    </div>
+                    
+                    <h3 style="margin-top: 30px;">✍️ EXERCISE 2.1: Test Your Top 3</h3>
+                    <p style="margin-bottom: 20px;">Write your favorite 3 catchphrases here:</p>
+                    
+                    <div class="input-group">
+                        <label>Option A:</label>
+                        <input type="text" id="catchphrase-a" placeholder="Paste your favorite catchphrase">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Option B:</label>
+                        <input type="text" id="catchphrase-b" placeholder="Paste your second choice">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Option C:</label>
+                        <input type="text" id="catchphrase-c" placeholder="Paste your third choice">
+                    </div>
+                    
+                    <div class="checkpoint">
+                        Quick Test: Say each out loud. Which one feels RIGHT? Mark it below!
+                    </div>
+                    
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" name="catchphrase-choice" value="a">
+                            <label>✨ Option A is my favorite</label>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="catchphrase-choice" value="b">
+                            <label>✨ Option B is my favorite</label>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="catchphrase-choice" value="c">
+                            <label>✨ Option C is my favorite</label>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECTION 3: LOGO CREATION -->
+            <div class="section" id="section3">
+                <div class="section-header" onclick="toggleSection(3)">
+                    <span>SECTION 3: LOGO CREATION WITH AI (25 min)</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="terms-box">
+                        <h3>🎨 New Terms to Know:</h3>
+                        <div class="term">
+                            <strong>Minimalist:</strong> Simple, clean design with few elements
+                        </div>
+                        <div class="term">
+                            <strong>Icon:</strong> A small symbolic image (like Apple's apple)
+                        </div>
+                        <div class="term">
+                            <strong>Wordmark:</strong> Logo made from stylized text of your business name
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px;">🖼️ EXERCISE 3.1: Choose Your Logo Style</h3>
+                    
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" name="logo-style" value="icon-text">
+                            <label><strong>Icon + Text</strong> (symbol plus business name)</label>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="logo-style" value="wordmark">
+                            <label><strong>Wordmark Only</strong> (stylized text, no symbol)</label>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="logo-style" value="abstract">
+                            <label><strong>Abstract Shape</strong> (geometric/modern design)</label>
+                        </label>
+                    </div>
+                    
+                    <h3 style="margin-top: 40px; color: #667eea;">METHOD A: Canva's AI (Easiest)</h3>
+                    
+                    <h4 style="margin: 20px 0 10px 0;">STEP-BY-STEP:</h4>
+                    <ol class="step-by-step">
+                        <li>Open Canva → Click "Logo" template</li>
+                        <li>Click "Apps" (left sidebar) → Find "Magic Design"</li>
+                        <li>Type: "[Business Name] logo, [style from above], [your colors], [vibe words]"</li>
+                        <li>Generate → Browse options → Click to customize</li>
+                    </ol>
+                    
+                    <div class="example-box">
+                        "Scope Consultants logo, minimalist, blue and green, professional modern"
+                    </div>
+                    
+                    <div class="timer">⏱️ Spend 8 minutes: Generate and customize 2-3 options</div>
+                    
+                    <h3 style="margin-top: 40px; color: #667eea;">METHOD B: Microsoft Designer (More Options)</h3>
+                    
+                    <h4 style="margin: 20px 0 10px 0;">STEP-BY-STEP:</h4>
+                    <ol class="step-by-step">
+                        <li>Go to designer.microsoft.com</li>
+                        <li>Describe your logo: "[Business name] professional logo with [icon type], [colors], [style]"</li>
+                        <li>Review 4 options → Select → Download</li>
+                    </ol>
+                    
+                    <div class="example-box">
+                        "Bright Ideas Consulting logo with lightbulb icon, yellow and grey, modern minimalist"
+                    </div>
+                    
+                    <div class="timer">⏱️ Spend 8 minutes: Create variations with different descriptions</div>
+                    
+                    <h3 style="margin-top: 40px;">✍️ EXERCISE 3.2: Logo Reality Check</h3>
+                    <p style="margin-bottom: 20px;">Screenshot your top 2 logos. Ask yourself:</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                        <div style="background: white; padding: 20px; border-radius: 8px; border: 2px solid #ddd;">
+                            <h4 style="margin-bottom: 15px;">Logo #1:</h4>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="logo1-tiny">
+                                    <label for="logo1-tiny">Looks good tiny (profile pic size)?</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="logo1-bw">
+                                    <label for="logo1-bw">Works in black & white?</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="logo1-vibe">
+                                    <label for="logo1-vibe">Matches my brand vibe?</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="background: white; padding: 20px; border-radius: 8px; border: 2px solid #ddd;">
+                            <h4 style="margin-bottom: 15px;">Logo #2:</h4>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="logo2-tiny">
+                                    <label for="logo2-tiny">Looks good tiny (profile pic size)?</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="logo2-bw">
+                                    <label for="logo2-bw">Works in black & white?</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="logo2-vibe">
+                                    <label for="logo2-vibe">Matches my brand vibe?</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECTION 4: REFINE & ITERATE -->
+            <div class="section" id="section4">
+                <div class="section-header" onclick="toggleSection(4)">
+                    <span>SECTION 4: REFINE & ITERATE (10 min)</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="section-content">
+                    <h3>🔄 The Power of "Iteration"</h3>
+                    <p style="margin: 15px 0; font-size: 1.1em;">AI rarely nails it first try. Let's improve!</p>
+                    
+                    <h3 style="margin-top: 30px;">✍️ EXERCISE 4.1: Make It Better</h3>
+                    <p style="margin-bottom: 20px;">Pick your favorite logo. What would make it perfect?</p>
+                    
+                    <div class="input-group">
+                        <label>I wish it was more:</label>
+                        <input type="text" id="improve-more" placeholder="e.g., colorful, simple, bold">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>I want to change:</label>
+                        <input type="text" id="improve-change" placeholder="e.g., the font, the icon size, the colors">
+                    </div>
+                    
+                    <h3 style="margin-top: 40px;">🔧 Refinement Prompts for ChatGPT:</h3>
+                    
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; border: 2px solid #667eea;">
+                        <h4 style="color: #667eea; margin-bottom: 15px;">For catchphrases:</h4>
+                        <div class="code-box">
+"Make option #[X] shorter and more punchy"
+
+"Give me 5 variations of #[X] that emphasize [aspect]"
+                        </div>
+                    </div>
+                    
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; border: 2px solid #667eea;">
+                        <h4 style="color: #667eea; margin-bottom: 15px;">For logo descriptions (use in Canva/Designer):</h4>
+                        <div class="code-box">
+"More minimalist version"
+
+"Same concept but warmer colors"
+
+"Make the icon more subtle"
+                        </div>
+                    </div>
+                    
+                    <div class="timer">⏱️ Spend 5 minutes: Refine your top choice</div>
+                </div>
+            </div>
+            
+            <!-- SECTION 5: NEXT STEPS -->
+            <div class="section" id="section5">
+                <div class="section-header" onclick="toggleSection(5)">
+                    <span>SECTION 5: NEXT STEPS & PRO TIPS (5 min)</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="section-content">
+                    <h3>🎓 What You've Learned:</h3>
+                    <ul class="checklist" style="margin: 20px 0;">
+                        <li>✅ How to write effective AI prompts</li>
+                        <li>✅ Free tools for brand creation</li>
+                        <li>✅ The iteration process</li>
+                        <li>✅ Basic brand identity principles</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 30px;">🚀 Your Homework:</h3>
+                    
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; border: 2px solid #764ba2;">
+                        <h4 style="color: #764ba2; margin-bottom: 15px;">Tonight:</h4>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="hw-save">
+                                <label for="hw-save">Save your top logo and catchphrase</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="hw-feedback">
+                                <label for="hw-feedback">Show 3 people and get feedback</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; border: 2px solid #764ba2;">
+                        <h4 style="color: #764ba2; margin-bottom: 15px;">This Week:</h4>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="hw-iterate">
+                                <label for="hw-iterate">Create 3 more iterations of your logo</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="hw-social">
+                                <label for="hw-social">Test catchphrase on social media</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="hw-brainstorm">
+                                <label for="hw-brainstorm">Use ChatGPT to brainstorm brand colors, fonts</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pro-tip">
+                        <strong>The Prompt Formula:</strong><br>
+                        "Create a [item type] for [business] that is [style] with [specific elements] in [colors/mood]"
+                    </div>
+                    
+                    <div class="pro-tip">
+                        <strong>When AI Gets It Wrong:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li>Be MORE specific, not less</li>
+                            <li>Give examples: "like Nike's simplicity but for consulting"</li>
+                            <li>Try different tools—each has strengths</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px;">Free Resources to Explore:</h3>
+                    <div class="tool-card">
+                        <strong>Coolors.co</strong> - AI color palette generator
+                    </div>
+                    <div class="tool-card">
+                        <strong>Looka.com</strong> - Free logo ideas (paid for files)
+                    </div>
+                    <div class="tool-card">
+                        <strong>Copy.ai</strong> - More catchphrase options
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FINAL SNAPSHOT -->
+            <div class="final-snapshot">
+                <h2 style="text-align: center; margin-bottom: 30px;">📋 FINAL EXERCISE: Your Brand Snapshot</h2>
+                
+                <div class="input-group">
+                    <label>Business Name:</label>
+                    <input type="text" id="final-business" placeholder="Your business name">
+                </div>
+                
+                <div class="input-group">
+                    <label>Final Catchphrase:</label>
+                    <input type="text" id="final-catchphrase" placeholder="Your chosen catchphrase">
+                </div>
+                
+                <div class="input-group">
+                    <label>Logo Description:</label>
+                    <textarea id="final-logo" rows="3" placeholder="Describe your final logo choice"></textarea>
+                </div>
+                
+                <div class="input-group">
+                    <label>Next Action (by this Friday):</label>
+                    <input type="text" id="final-action" placeholder="What will you do next?">
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="button-primary" onclick="saveWorkbook()">💾 Save My Progress</button>
+                    <button class="button-primary button-secondary" onclick="window.print()">🖨️ Print Workbook</button>
+                </div>
+            </div>
+            
+            <!-- CONGRATULATIONS -->
+            <div class="congrats">
+                <h2>🎉 CONGRATULATIONS!</h2>
+                <p style="font-size: 1.2em; margin: 20px 0; line-height: 1.8;">
+                    You just built brand elements in under an hour that used to take weeks and thousands of dollars. This is the power of AI as your creative partner.
+                </p>
+                <p style="font-size: 1.1em; margin-top: 20px; font-style: italic;">
+                    <strong>Remember:</strong> AI is a tool, not a replacement for YOUR unique vision. Use it to explore faster, but always trust your gut on what represents you best.
+                </p>
+            </div>
+            
+            <div style="text-align: center; padding: 40px 20px; background: #f5f5f5; border-radius: 12px; margin: 30px 0;">
+                <h3 style="color: #667eea; margin-bottom: 15px;">Questions? Share your creations!</h3>
+                <p style="font-size: 1.3em; color: #764ba2; font-weight: bold;">#RebrandAndRise @ScopeConsultants</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p style="margin-bottom: 10px;"><strong>Workshop Leader Notes:</strong></p>
+            <p style="opacity: 0.8;">Build in 2-3 moments for pairs to share screens and get peer feedback. Circulate during exercises to assist with technical issues.</p>
+            <p style="margin-top: 20px; opacity: 0.6;">© Scope Consultants | Rebrand and Rise Workshop</p>
+        </div>
+    </div>
+    
+    <div class="save-btn-container">
+        <button class="button-primary" onclick="saveWorkbook()" style="box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+            💾 Save Progress
+        </button>
+    </div>
+    
+    <script>
+        // Toggle section collapse
+        function toggleSection(sectionNum) {
+            const section = document.getElementById(`section${sectionNum}`);
+            section.classList.toggle('collapsed');
+            updateProgress();
+        }
+        
+        // Copy prompt to clipboard
+        function copyPrompt() {
+            const businessType = document.getElementById('business-type').value || '[YOUR BUSINESS TYPE]';
+            const helpPeople = document.getElementById('help-people').value || '[FROM EXERCISE 1.1]';
+            const vibe1 = document.getElementById('vibe-1').value || '';
+            const vibe2 = document.getElementById('vibe-2').value || '';
+            const vibe3 = document.getElementById('vibe-3').value || '';
+            const vibeWords = [vibe1, vibe2, vibe3].filter(v => v).join(', ') || '[YOUR 3 WORDS]';
+            const feeling = document.getElementById('customer-feeling').value || '[FROM ABOVE]';
+            
+            const prompt = `I'm creating a brand for ${businessType}. 
+
+My brand DNA:
+- We help: ${helpPeople}
+- Brand vibe: ${vibeWords}
+- Customer feeling: ${feeling}
+
+Generate 10 catchphrase options that are:
+- Under 7 words
+- Memorable and clear
+- Professional but approachable`;
+            
+            navigator.clipboard.writeText(prompt).then(() => {
+                alert('✅ Prompt copied to clipboard! Paste it into ChatGPT.');
+            }).catch(() => {
+                alert('Please manually copy the prompt above.');
+            });
+        }
+        
+        // Save workbook data to localStorage
+        function saveWorkbook() {
+            const formData = {
+                businessType: document.getElementById('business-type').value,
+                helpPeople: document.getElementById('help-people').value,
+                vibe1: document.getElementById('vibe-1').value,
+                vibe2: document.getElementById('vibe-2').value,
+                vibe3: document.getElementById('vibe-3').value,
+                customerFeeling: document.getElementById('customer-feeling').value,
+                colors: document.getElementById('colors').value,
+                catchphraseA: document.getElementById('catchphrase-a').value,
+                catchphraseB: document.getElementById('catchphrase-b').value,
+                catchphraseC: document.getElementById('catchphrase-c').value,
+                improveMore: document.getElementById('improve-more').value,
+                improveChange: document.getElementById('improve-change').value,
+                finalBusiness: document.getElementById('final-business').value,
+                finalCatchphrase: document.getElementById('final-catchphrase').value,
+                finalLogo: document.getElementById('final-logo').value,
+                finalAction: document.getElementById('final-action').value,
+                timestamp: new Date().toISOString()
+            };
+            
+            localStorage.setItem('rebrandAndRise_workbook', JSON.stringify(formData));
+            
+            // Also create downloadable version
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(formData, null, 2));
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", "rebrand-and-rise-workbook.json");
+            downloadAnchor.click();
+            
+            alert('✅ Your progress has been saved and downloaded!');
+        }
+        
+        // Load saved data
+        function loadWorkbook() {
+            const savedData = localStorage.getItem('rebrandAndRise_workbook');
+            if (savedData) {
+                const formData = JSON.parse(savedData);
+                
+                if (confirm('We found saved progress. Would you like to load it?')) {
+                    document.getElementById('business-type').value = formData.businessType || '';
+                    document.getElementById('help-people').value = formData.helpPeople || '';
+                    document.getElementById('vibe-1').value = formData.vibe1 || '';
+                    document.getElementById('vibe-2').value = formData.vibe2 || '';
+                    document.getElementById('vibe-3').value = formData.vibe3 || '';
+                    document.getElementById('customer-feeling').value = formData.customerFeeling || '';
+                    document.getElementById('colors').value = formData.colors || '';
+                    document.getElementById('catchphrase-a').value = formData.catchphraseA || '';
+                    document.getElementById('catchphrase-b').value = formData.catchphraseB || '';
+                    document.getElementById('catchphrase-c').value = formData.catchphraseC || '';
+                    document.getElementById('improve-more').value = formData.improveMore || '';
+                    document.getElementById('improve-change').value = formData.improveChange || '';
+                    document.getElementById('final-business').value = formData.finalBusiness || '';
+                    document.getElementById('final-catchphrase').value = formData.finalCatchphrase || '';
+                    document.getElementById('final-logo').value = formData.finalLogo || '';
+                    document.getElementById('final-action').value = formData.finalAction || '';
+                }
+            }
+        }
+        
+        // Update progress bar
+        function updateProgress() {
+            const inputs = document.querySelectorAll('input[type="text"], textarea');
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const radios = document.querySelectorAll('input[type="radio"]:checked');
+            
+            let filled = 0;
+            inputs.forEach(input => {
+                if (input.value.trim() !== '') filled++;
+            });
+            
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) filled++;
+            });
+            
+            filled += radios.length;
+            
+            const total = inputs.length + checkboxes.length + document.querySelectorAll('input[type="radio"]').length / 3; // Approximate
+            const percentage = Math.min((filled / total) * 100, 100);
+            
+            document.getElementById('progressFill').style.width = percentage + '%';
+        }
+        
+        // Auto-save on input
+        document.addEventListener('input', () => {
+            updateProgress();
+            // Auto-save to localStorage every 30 seconds
+            clearTimeout(window.autoSaveTimeout);
+            window.autoSaveTimeout = setTimeout(() => {
+                const formData = {
+                    businessType: document.getElementById('business-type').value,
+                    helpPeople: document.getElementById('help-people').value,
+                    vibe1: document.getElementById('vibe-1').value,
+                    vibe2: document.getElementById('vibe-2').value,
+                    vibe3: document.getElementById('vibe-3').value,
+                    customerFeeling: document.getElementById('customer-feeling').value,
+                    colors: document.getElementById('colors').value,
+                    catchphraseA: document.getElementById('catchphrase-a').value,
+                    catchphraseB: document.getElementById('catchphrase-b').value,
+                    catchphraseC: document.getElementById('catchphrase-c').value,
+                    improveMore: document.getElementById('improve-more').value,
+                    improveChange: document.getElementById('improve-change').value,
+                    finalBusiness: document.getElementById('final-business').value,
+                    finalCatchphrase: document.getElementById('final-catchphrase').value,
+                    finalLogo: document.getElementById('final-logo').value,
+                    finalAction: document.getElementById('final-action').value,
+                    timestamp: new Date().toISOString()
+                };
+                localStorage.setItem('rebrandAndRise_workbook', JSON.stringify(formData));
+            }, 30000);
+        });
+        
+        // Load on page load
+        window.addEventListener('load', () => {
+            loadWorkbook();
+            updateProgress();
+        });
+        
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
